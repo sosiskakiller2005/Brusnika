@@ -69,6 +69,12 @@
     <Compile Include="Views\Windows\AuthorisationWIndow.xaml.cs">
       <DependentUpon>AuthorisationWIndow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Windows\MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SignUpWindow.xaml.cs">
+      <DependentUpon>SignUpWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppData\AuthorisationHelper.cs" />
@@ -133,6 +139,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Fonts\Inter-Italic-VariableFont_opsz,wght.ttf" />
+    <Resource Include="Resources\Fonts\Inter-VariableFont_opsz,wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -148,6 +156,7 @@
       <DependentUpon>BrusnikaModel.edmx</DependentUpon>
       <LastGenOutput>BrusnikaModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -172,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\ListBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -189,6 +202,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Windows\AuthorisationWIndow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\SignUpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

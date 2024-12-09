@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Brusnika.AppData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,23 @@ namespace Brusnika.Views.Windows
         public AuthorisationWIndow()
         {
             InitializeComponent();
+        }
+
+        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (AuthorisationHelper.Authorise(LoginTb.Text, PassTb.Password))
+            {
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.Show();
+                Close();
+            }
+        }
+
+        private void SignUpHl_Click(object sender, RoutedEventArgs e)
+        {
+            SignUpWindow signUpWindow = new SignUpWindow();
+            signUpWindow.Show();
+            Close();
         }
     }
 }
