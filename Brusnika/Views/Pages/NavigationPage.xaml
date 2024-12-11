@@ -1,0 +1,34 @@
+﻿<Page x:Class="Brusnika.Views.Pages.NavigationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Brusnika.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Title="NavigationPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height=".3*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/logo.png" Grid.Row="1"/>
+        <Button Name="MenuBtn" Click="MenuBtn_Click" Grid.Row="3" Width="200" Height="60">
+            <Button.Content>
+                <TextBlock Text="Меню" FontSize="40"/>
+            </Button.Content>
+        </Button>
+        <Button Name="DeliveryBtn" Click="DeliveryBtn_Click" Grid.Row="5" Width="200" Height="60">
+            <Button.Content>
+                <TextBlock Text="Доставки" FontSize="40" />
+            </Button.Content>
+        </Button>
+    </Grid>
+</Page>

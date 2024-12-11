@@ -1,5 +1,4 @@
 ﻿using Brusnika.AppData;
-using Brusnika.Views.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +11,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Brusnika.Views.Windows
+namespace Brusnika.Views.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MenuWindow.xaml
+    /// Логика взаимодействия для MenuPage.xaml
     /// </summary>
-    public partial class MenuWindow : Window
+    public partial class MenuPage : Page
     {
-        public MenuWindow()
+        public MenuPage()
         {
             InitializeComponent();
-            FrameHelper.selectedFrame = MainFrm;
-            MainFrm.Navigate(new NavigationPage());
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrameHelper.selectedFrame.Navigate(new NavigationPage());
         }
     }
 }

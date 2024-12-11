@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Brusnika.Views.Windows"
         mc:Ignorable="d"
-        Height="600" Width="700"
+            Height="600" Width="700"
         WindowStartupLocation="CenterScreen">
     <StackPanel>
         <Border Height="10"/>
