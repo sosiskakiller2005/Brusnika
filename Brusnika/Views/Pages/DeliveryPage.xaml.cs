@@ -1,4 +1,4 @@
-﻿using Brusnika.AppData;
+﻿using Brusnika.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,23 +17,15 @@ using System.Windows.Shapes;
 namespace Brusnika.Views.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для NavigationPage.xaml
+    /// Логика взаимодействия для DeliveryPage.xaml
     /// </summary>
-    public partial class NavigationPage : Page
+    public partial class DeliveryPage : Page
     {
-        public NavigationPage()
+        private static BrusnikaDbEntities _context = App.GetContext();
+        public DeliveryPage()
         {
             InitializeComponent();
-        }
-
-        private void MenuBtn_Click(object sender, RoutedEventArgs e)
-        {
-            FrameHelper.selectedFrame.Navigate(new MenuPage());
-        }
-
-        private void DeliveryBtn_Click(object sender, RoutedEventArgs e)
-        {
-            FrameHelper.selectedFrame.Navigate(new DeliveryPage()); 
+            DeliveryiesLb.ItemsSource = _context.Delivery.ToList();
         }
     }
 }
