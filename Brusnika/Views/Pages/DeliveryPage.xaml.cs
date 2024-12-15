@@ -1,4 +1,5 @@
-﻿using Brusnika.Model;
+﻿using Brusnika.AppData;
+using Brusnika.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace Brusnika.Views.Pages
         {
             InitializeComponent();
             DeliveryiesLb.ItemsSource = _context.Delivery.ToList();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrameHelper.selectedFrame.Navigate(new NavigationPage());
         }
     }
 }
