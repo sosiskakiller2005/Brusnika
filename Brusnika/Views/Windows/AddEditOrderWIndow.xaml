@@ -1,0 +1,55 @@
+﻿<Window x:Class="Brusnika.Views.Windows.AddEditOrderWIndow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Brusnika.Views.Windows"
+        mc:Ignorable="d"
+        Title="Добавить/редактировать заказ" Height="550" Width="800"
+        Background="#D4B9BB" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10" Name="DeliveryGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="TitleTbl" Text="Данные заказа" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <TextBlock Text="Номер:" Height="50"/>
+                <Border Height="10"/>
+                <TextBlock Text="Время:" Height="50"/>
+                <Border Height="10"/>
+                <TextBlock Text="Адрес:" Height="50"/>
+                <Border Height="10"/>
+                <TextBlock Text="Телефон:" Height="50"/>
+                <Border Height="10"/>
+                <TextBlock Text="Пользователь:" Height="50"/>
+                <Border Height="10"/>
+                <TextBlock Text="Комментарий:" Height="50"/>
+                <Border Height="10"/>
+                <Button Name="AddBtn" Content="Создать" Click="AddBtn_Click"/>
+                <Button Name="EditBtn" Content="Сохранить" Click="EditBtn_Click"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="{Binding Id}" Height="50"/>
+                <Border Height="10"/>
+                <TextBlock Name="DateTimeTbl" Text="{Binding DateTIme, StringFormat={}{0:dd.MM.yyy HH:mm}}" Height="50"/>
+                <Border Height="10"/>
+                <TextBox Name="AdressTb" Text="{Binding Adress}" Height="50"/>
+                <Border Height="10"/>
+                <TextBox Name="PhoneTb" Text="{Binding PhoneNumber}" Height="50"/>
+                <Border Height="10"/>
+                <ComboBox Name="UserCmb" SelectedItem="{Binding User}" Style="{StaticResource roundedCornersComboBox}" Height="50"/>
+                <Border Height="10"/>
+                <TextBox Name="CommentTb" Text="{Binding Comment}" Height="50"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

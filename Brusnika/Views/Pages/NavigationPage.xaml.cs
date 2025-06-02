@@ -35,5 +35,10 @@ namespace Brusnika.Views.Pages
         {
             FrameHelper.selectedFrame.Navigate(new DeliveryPage()); 
         }
+
+        private void ProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrameHelper.selectedFrame.Navigate(new ProfilePage()); 
+        }
     }
 }

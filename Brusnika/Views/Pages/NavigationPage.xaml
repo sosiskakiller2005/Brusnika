@@ -17,6 +17,7 @@
             <RowDefinition Height=".1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height=".3*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
         <Image Source="/Resources/logo.png" Grid.Row="1"/>
@@ -28,6 +29,11 @@
         <Button Name="DeliveryBtn" Click="DeliveryBtn_Click" Grid.Row="5" Width="200" Height="60">
             <Button.Content>
                 <TextBlock Text="Доставки" FontSize="40" />
+            </Button.Content>
+        </Button>
+        <Button Name="ProfileBtn" Click="ProfileBtn_Click" Grid.Row="7" Width="200" Height="60">
+            <Button.Content>
+                <TextBlock Text="Профиль" FontSize="40" />
             </Button.Content>
         </Button>
     </Grid>

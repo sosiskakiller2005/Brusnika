@@ -75,6 +75,12 @@
     <Compile Include="Views\Pages\NavigationPage.xaml.cs">
       <DependentUpon>NavigationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AddEditOrderWIndow.xaml.cs">
+      <DependentUpon>AddEditOrderWIndow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\AuthorisationWIndow.xaml.cs">
       <DependentUpon>AuthorisationWIndow.xaml</DependentUpon>
     </Compile>
@@ -223,6 +229,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\NavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\AddEditOrderWIndow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

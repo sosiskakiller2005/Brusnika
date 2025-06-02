@@ -8,7 +8,7 @@
       d:DesignHeight="700" d:DesignWidth="1000"
       Title="DeliveryPage" Background="#D4B9BB">
     <StackPanel Margin="10">
-        <TextBlock Text="Текущие доставки" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="100 0 0 0"/>
+        <TextBlock Text="Текущие доставки" FontWeight="SemiBold" HorizontalAlignment="Center" />
         <Border Height="20"/>
         <Border Height="500" Width="870" CornerRadius="90" Background="White">
             <StackPanel>
@@ -22,7 +22,7 @@
                     <Border Width="140"/>
                     <TextBlock Text="Телефон"/>
                 </StackPanel>
-                <ListBox Name="DeliveryiesLb" Background="Transparent" BorderBrush="Transparent">
+                <ListBox Name="DeliveryiesLb" Background="Transparent" BorderBrush="Transparent" MouseDoubleClick="DeliveryiesLb_MouseDoubleClick" Height="420" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Border Background="#C7052D" CornerRadius="40" Padding="30 0" HorizontalAlignment="Center" Margin="20 10">
@@ -30,7 +30,7 @@
                                     <Border Width="80"/>
                                     <TextBlock Text="{Binding Id}" Foreground="White"/>
                                     <Border Width="110"/>
-                                    <TextBlock Text="{Binding User.Name}" Foreground="White"/>
+                                    <TextBlock Text="{Binding User.Lastname}" Foreground="White"/>
                                     <Border Width="40"/>
                                     <TextBlock Text="{Binding Adress}" Width="200" TextWrapping="Wrap" Foreground="White"/>
                                     <Border Width="40"/>
@@ -43,6 +43,9 @@
             </StackPanel>
         </Border>
         <Border Height="40"/>
-        <Button Name="BackBtn" Content="Назад" Click="BackBtn_Click" HorizontalAlignment="Left" Margin="70 0 0 0"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="BackBtn" Content="Назад" Click="BackBtn_Click" HorizontalAlignment="Left" Margin="70 0 0 0"/>
+            <Button Name="NewOrderBtn" Content="Создать" Click="NewOrderBtn_Click" Margin="450 0 0 0"/>
+        </StackPanel>
     </StackPanel>
 </Page>
