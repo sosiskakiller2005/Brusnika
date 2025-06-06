@@ -17,6 +17,7 @@ namespace Brusnika.Model
         public int Id { get; set; }
         public int DishId { get; set; }
         public int DeliveryId { get; set; }
+        public Nullable<int> Quantity { get; set; }
     
         public virtual Delivery Delivery { get; set; }
         public virtual DIsh DIsh { get; set; }

@@ -20,7 +20,7 @@
           <Property Name="DateTIme" Type="datetime" Nullable="false" />
           <Property Name="Adress" Type="nvarchar(max)" Nullable="false" />
           <Property Name="PhoneNumber" Type="char" MaxLength="11" Nullable="false" />
-          <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
           <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DIsh">
@@ -39,6 +39,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DishId" Type="int" Nullable="false" />
           <Property Name="DeliveryId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -142,7 +143,7 @@
           <Property Name="DateTIme" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Delivery_User" FromRole="Delivery" ToRole="User" />
           <NavigationProperty Name="DishDelivery" Relationship="Self.FK_DishDelivery_Delivery" FromRole="Delivery" ToRole="DishDelivery" />
@@ -165,6 +166,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DishId" Type="Int32" Nullable="false" />
           <Property Name="DeliveryId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_DishDelivery_Delivery" FromRole="DishDelivery" ToRole="Delivery" />
           <NavigationProperty Name="DIsh" Relationship="Self.FK_DishDelivery_DIsh" FromRole="DishDelivery" ToRole="DIsh" />
         </EntityType>
@@ -292,6 +294,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="DishId" ColumnName="DishId" />
                 <ScalarProperty Name="DeliveryId" ColumnName="DeliveryId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

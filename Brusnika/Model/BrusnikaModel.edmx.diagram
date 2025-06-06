@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a5f3b95fa9f74434a118f53f844d35b2" Name="Diagram1">
+      <Diagram DiagramId="3560dcf5cba1426eb552252f56069270" Name="Diagram1">
         <EntityTypeShape EntityType="BrusnikaDbModel.Category" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BrusnikaDbModel.Delivery" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BrusnikaDbModel.DIsh" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BrusnikaDbModel.DishDelivery" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrusnikaDbModel.DishDelivery" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BrusnikaDbModel.User" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="BrusnikaDbModel.FK_DIsh_Category" ManuallyRouted="false" />
         <AssociationConnector Association="BrusnikaDbModel.FK_Delivery_User" ManuallyRouted="false" />

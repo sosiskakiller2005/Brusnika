@@ -24,6 +24,8 @@ namespace Brusnika.Views.Windows
         private static BrusnikaDbEntities _context = App.GetContext();
 
         private Delivery _selectedDelivery;
+        private Delivery _newDelivery = new Delivery();
+        private List<DishDelivery> _dishDeliveries = new List<DishDelivery>();
         public AddEditOrderWIndow()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace Brusnika.Views.Windows
         {
             if (!string.IsNullOrEmpty(AdressTb.Text) && !string.IsNullOrEmpty(PhoneTb.Text) && UserCmb.SelectedItem != null)
             {
+
                 if (CommentTb.Text == null)
                 {
                     Delivery newDelivery = new Delivery()
@@ -59,7 +62,43 @@ namespace Brusnika.Views.Windows
                     };
                     _context.Delivery.Add(newDelivery);
                     _context.SaveChanges();
-                    MessageBoxHelper.Information("Заказ успешно добавлен", "Успех");
+                    var deliveryId = newDelivery.Id;
+                    foreach (var item in _dishDeliveries)
+                    {
+                        item.DeliveryId = deliveryId;
+                    }
+
+                    Delivery lastDelivery = _context.Delivery.OrderByDescending(d => d.Id).FirstOrDefault();
+                    if (_dishDeliveries == null || !_dishDeliveries.Any())
+                    {
+                        MessageBoxHelper.Error("Добавьте хотя бы одно блюдо к заказу.", "Ошибка");
+                        return;
+                    }
+
+                    foreach (var item in _dishDeliveries)
+                    {
+                        if (item == null || item.DIsh == null)
+                        {
+                            MessageBoxHelper.Error("В списке блюд есть некорректные записи.", "Ошибка");
+                            return;
+                        }
+                        if (item.DIsh.Id <= 0)
+                        {
+                            MessageBoxHelper.Error("Некорректный идентификатор блюда.", "Ошибка");
+                            return;
+                        }
+                        if (!item.Quantity.HasValue || item.Quantity.Value <= 0)
+                        {
+                            MessageBoxHelper.Error("Укажите количество для каждого блюда.", "Ошибка");
+                            return;
+                        }
+                    }
+                    foreach (var item in _dishDeliveries)
+                    {
+                        _context.DishDelivery.Add(item);
+                    }
+                    _context.SaveChanges();
+                    MessageBoxHelper.Information("Заказ успешно добавлен");
                     DialogResult = true;
                 }
                 else
@@ -74,7 +113,43 @@ namespace Brusnika.Views.Windows
                     };
                     _context.Delivery.Add(newDelivery);
                     _context.SaveChanges();
-                    MessageBoxHelper.Information("Заказ успешно добавлен", "Успех");
+                    var deliveryId = newDelivery.Id;
+                    foreach (var item in _dishDeliveries)
+                    {
+                        item.DeliveryId = deliveryId;
+                    }
+
+                    Delivery lastDelivery = _context.Delivery.OrderByDescending(d => d.Id).FirstOrDefault();
+                    if (_dishDeliveries == null || !_dishDeliveries.Any())
+                    {
+                        MessageBoxHelper.Error("Добавьте хотя бы одно блюдо к заказу.", "Ошибка");
+                        return;
+                    }
+
+                    foreach (var item in _dishDeliveries)
+                    {
+                        if (item == null || item.DIsh == null)
+                        {
+                            MessageBoxHelper.Error("В списке блюд есть некорректные записи.", "Ошибка");
+                            return;
+                        }
+                        if (item.DIsh.Id <= 0)
+                        {
+                            MessageBoxHelper.Error("Некорректный идентификатор блюда.", "Ошибка");
+                            return;
+                        }
+                        if (!item.Quantity.HasValue || item.Quantity.Value <= 0)
+                        {
+                            MessageBoxHelper.Error("Укажите количество для каждого блюда.", "Ошибка");
+                            return;
+                        }
+                    }
+                    foreach (var item in _dishDeliveries)
+                    {
+                        _context.DishDelivery.Add(item);
+                    }
+                    _context.SaveChanges();
+                    MessageBoxHelper.Information("Заказ успешно добавлен");
                     DialogResult = true;
                 }
             }
@@ -111,6 +186,16 @@ namespace Brusnika.Views.Windows
             else
             {
                 MessageBoxHelper.Error("Пожалуйста, заполните все поля", "Ошибка");
+            }
+        }
+
+        private void MenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OrderDishesWindow orderDishesWindow = new OrderDishesWindow();
+            orderDishesWindow.ShowDialog();
+            if (orderDishesWindow.DialogResult == true)
+            {
+                _dishDeliveries = orderDishesWindow.dishDeliveries;
             }
         }
     }

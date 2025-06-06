@@ -49,6 +49,8 @@
                 <ComboBox Name="UserCmb" SelectedItem="{Binding User}" Style="{StaticResource roundedCornersComboBox}" Height="50"/>
                 <Border Height="10"/>
                 <TextBox Name="CommentTb" Text="{Binding Comment}" Height="50"/>
+                <Border Height="10"/>
+                <Button Name="MenuBtn" Content="Блюда" Click="MenuBtn_Click"/>
             </StackPanel>
         </Grid>
     </Grid>
